@@ -85,7 +85,6 @@ export function CreateUserForm({ lockers }: CreateUserFormProps) {
             name="name"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            placeholder="Contoh: Budi Santoso"
             autoComplete="name"
           />
         </div>
@@ -98,7 +97,6 @@ export function CreateUserForm({ lockers }: CreateUserFormProps) {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="user@email.com"
             autoComplete="email"
           />
         </div>
@@ -111,7 +109,6 @@ export function CreateUserForm({ lockers }: CreateUserFormProps) {
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            placeholder="Minimal 6 karakter"
             autoComplete="new-password"
           />
         </div>
@@ -123,7 +120,6 @@ export function CreateUserForm({ lockers }: CreateUserFormProps) {
             name="rfidUid"
             value={rfidUid}
             onChange={(event) => setRfidUid(event.target.value)}
-            placeholder="Contoh: 04A1B2C3"
             autoComplete="off"
           />
         </div>
@@ -149,12 +145,6 @@ export function CreateUserForm({ lockers }: CreateUserFormProps) {
         <UserPlus size={18} />
         {loading ? "Membuat akun..." : "Buat Akun User"}
       </button>
-
-      <p className="form-hint">
-        Satu kartu RFID hanya dapat dipasangkan ke satu user dan satu loker.
-        Saat kartu ditempelkan ke reader, loker yang dipasangkan akan menerima
-        perintah buka atau tutup.
-      </p>
     </form>
   );
 }

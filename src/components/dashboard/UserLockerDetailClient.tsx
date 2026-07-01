@@ -124,7 +124,6 @@ export function UserLockerDetailClient({ lockerId }: { lockerId: string }) {
             Kembali
           </Link>
           <h1>{locker.name}</h1>
-          <p>Detail status dan kontrol loker milik Anda.</p>
         </div>
         <LogoutButton className="secondary-button" label="Keluar Akun" />
       </header>
@@ -151,19 +150,16 @@ export function UserLockerDetailClient({ lockerId }: { lockerId: string }) {
           <CalendarClock size={24} />
           <span>Terakhir Dibuka</span>
           <strong>{formatTime(locker.last_opened_at)}</strong>
-          <p>Waktu diperbarui setelah perangkat memproses perintah buka.</p>
         </article>
         <article className="detail-info">
           <KeyRound size={24} />
           <span>Kontrol Loker</span>
           <strong>Buka / Tutup</strong>
-          <p>Kirim perintah ke perangkat IoT untuk mengendalikan loker Anda.</p>
         </article>
       </section>
 
       <section className="users-card detail-control-card">
         <h2>Kontrol {locker.name}</h2>
-        <p>Gunakan tombol berikut untuk membuka atau menutup loker Anda.</p>
         <LockerCommandButtons lockerId={locker.id} userId={profile.id} />
       </section>
     </main>

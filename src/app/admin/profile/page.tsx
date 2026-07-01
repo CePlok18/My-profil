@@ -18,7 +18,6 @@ export default function AdminProfilePage() {
         <header className="topbar">
           <div>
             <h1>Profile Akun</h1>
-            <p>Informasi lengkap akun admin Smart Loker Penyimpanan.</p>
           </div>
           <div className="topbar-actions">
             <LogoutButton className="secondary-button" label="Keluar Akun" />
@@ -32,10 +31,6 @@ export default function AdminProfilePage() {
           <div>
             <span>Administrator</span>
             <h2>Admin Smart Loker</h2>
-            <p>
-              Akun ini digunakan untuk mengelola user, memantau status loker,
-              dan mengatur akses penyimpanan.
-            </p>
           </div>
         </section>
 

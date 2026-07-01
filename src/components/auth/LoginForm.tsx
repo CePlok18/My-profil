@@ -29,9 +29,7 @@ export function LoginForm() {
     const supabase = getSupabaseBrowserClient();
 
     if (!supabase) {
-      setError(
-        "Koneksi Supabase belum tersedia. Hubungi admin sistem untuk konfigurasi aplikasi."
-      );
+      setError("Layanan login belum tersedia. Hubungi admin sistem.");
       return;
     }
 
@@ -76,9 +74,7 @@ export function LoginForm() {
 
       window.location.href = getDashboardPath(profile.role);
     } catch {
-      setError(
-        "Tidak dapat terhubung ke Supabase. Periksa URL project Supabase dan koneksi internet."
-      );
+      setError("Tidak dapat terhubung ke layanan login. Periksa koneksi internet.");
     } finally {
       setLoading(false);
     }
@@ -93,7 +89,6 @@ export function LoginForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="admin@smartloker.id"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           autoComplete="email"
@@ -105,7 +100,6 @@ export function LoginForm() {
           id="password"
           name="password"
           type="password"
-          placeholder="Masukkan password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           autoComplete="current-password"

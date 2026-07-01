@@ -104,7 +104,6 @@ export default async function AdminDashboardPage() {
         <header className="topbar">
           <div>
             <h1>Smart Loker Penyimpanan</h1>
-            <p>Dashboard admin untuk memantau loker dan akses pengguna.</p>
           </div>
           <div className="topbar-actions">
             <RefreshButton />

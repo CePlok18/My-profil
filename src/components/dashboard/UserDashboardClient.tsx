@@ -102,7 +102,6 @@ export function UserDashboardClient() {
         <div>
           <BrandMark />
           <h1 style={{ marginTop: 22 }}>Dashboard User</h1>
-          <p>Setiap user hanya dapat mengakses satu loker yang diberikan admin.</p>
         </div>
         <div className="topbar-actions">
           <LogoutButton className="secondary-button" label="Keluar Akun" />
@@ -118,7 +117,6 @@ export function UserDashboardClient() {
         <div className="profile-main">
           <span>Profil Akun</span>
           <h2>{state.loading ? "Memuat profil..." : profileName}</h2>
-          <p>Akun pengguna yang mendapatkan akses satu loker dari admin.</p>
         </div>
         <div className="profile-details">
           <div>

@@ -32,10 +32,6 @@ export function Sidebar() {
       <div className="sidebar-footer">
         <LogoutButton />
       </div>
-      <div className="sidebar-status">
-        <span>Status koneksi</span>
-        <strong>Supabase siap dihubungkan</strong>
-      </div>
     </aside>
   );
 }

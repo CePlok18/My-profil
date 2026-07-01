@@ -84,24 +84,15 @@ export default async function AdminUsersPage() {
         <header className="topbar">
           <div>
             <h1>Data User</h1>
-            <p>Halaman awal untuk admin mendaftarkan user Smart Loker Penyimpanan.</p>
           </div>
         </header>
         <section className="users-card">
           <h2>Tambah Akun User</h2>
-          <p>
-            Admin dapat membuat akun user baru untuk login ke web dan memilih
-            satu loker yang boleh diakses user tersebut.
-          </p>
           <CreateUserForm lockers={lockers} />
         </section>
 
         <section className="users-card users-list-card">
           <h2>User Terdaftar di Loker</h2>
-          <p>
-            Admin dapat menghapus akun user yang sudah terdaftar pada loker.
-            Setelah dihapus, loker akan dikembalikan menjadi tersedia.
-          </p>
           <RegisteredUsersTable users={registeredUsers} />
         </section>
       </section>

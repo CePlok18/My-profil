@@ -120,7 +120,6 @@ export default async function LockerDetailPage({ params }: LockerDetailPageProps
               Kembali
             </Link>
             <h1>{locker.name}</h1>
-            <p>Detail status dan kontrol untuk {locker.name}.</p>
           </div>
         </header>
 
@@ -146,31 +145,21 @@ export default async function LockerDetailPage({ params }: LockerDetailPageProps
             <CalendarClock size={24} />
             <span>Terakhir Dibuka</span>
             <strong>{formatTime(locker.last_opened_at)}</strong>
-            <p>Waktu diperbarui saat perangkat IoT berhasil memproses perintah buka.</p>
           </article>
           <article className="detail-info">
             <KeyRound size={24} />
             <span>Kontrol Loker</span>
             <strong>Buka / Tutup</strong>
-            <p>Kirim perintah ke ESP32 melalui MQTT untuk menggerakkan servo loker.</p>
           </article>
         </section>
 
         <section className="users-card detail-control-card">
           <h2>Kontrol {locker.name}</h2>
-          <p>
-            Tombol ini digunakan untuk mengirim perintah buka atau tutup ke
-            perangkat IoT yang terhubung dengan {locker.name}.
-          </p>
           <LockerCommandButtons lockerId={locker.id} userId={locker.current_user_id} />
         </section>
 
         <section className="users-card detail-control-card">
           <h2>Kartu RFID {locker.name}</h2>
-          <p>
-            Tambahkan, ganti, atau hapus kartu RFID yang dipasangkan langsung
-            ke {locker.name}. Saat tombol tambah ditekan, tempelkan kartu ke reader.
-          </p>
           <RfidCardEnrollment
             lockerId={locker.id}
             lockerName={locker.name}
