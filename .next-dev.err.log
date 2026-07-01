@@ -1,0 +1,6 @@
+Gagal membaca profil akun: {
+  code: '42703',
+  details: null,
+  hint: null,
+  message: 'column profiles.rfid_uid does not exist'
+}

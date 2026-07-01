@@ -1,0 +1,16 @@
+
+> web2@1.0.0 dev
+> next dev -p 3000
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.3:3000
+- Environments: .env.local
+✓ Ready in 1801ms
+Creating turbopack project { dir: 'D:\\#PROJEK\\Web2', testMode: true }
+
+ GET /login 200 in 1593ms (next.js: 573ms, application-code: 1019ms)
+ GET /login 200 in 142ms (next.js: 8ms, application-code: 134ms)
+ GET /api/auth/me 404 in 838ms (next.js: 280ms, application-code: 558ms)
+ GET /login 200 in 313ms (next.js: 169ms, application-code: 145ms)
+ GET /api/auth/me 404 in 3.6s (next.js: 835ms, application-code: 2.8s)
