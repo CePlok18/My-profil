@@ -13,7 +13,7 @@ export default function LoginPage() {
           <span />
         </div>
         <div className="login-copy">
-          <span className="login-eyebrow">Smart Locker System</span>
+          <span className="login-eyebrow">Brain Change The World</span>
           <h1>Smart Loker Penyimpanan</h1>
         </div>
       </section>
