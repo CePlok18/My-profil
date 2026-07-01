@@ -50,7 +50,8 @@ button {
 .login-page {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+  background: #f4f8f6;
 }
 
 .login-visual {
@@ -61,22 +62,35 @@ button {
   justify-content: space-between;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(17, 106, 107, 0.94), rgba(19, 59, 69, 0.96)),
+    radial-gradient(circle at 78% 22%, rgba(229, 184, 75, 0.22), transparent 25%),
+    linear-gradient(145deg, rgba(17, 106, 107, 0.96), rgba(13, 48, 58, 0.98)),
     url("https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80");
   background-position: center;
   background-size: cover;
   color: #ffffff;
-  padding: 52px;
+  padding: clamp(32px, 5vw, 68px);
+}
+
+.login-visual::before {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  content: "";
+  right: -180px;
+  top: -180px;
 }
 
 .login-visual::after {
   position: absolute;
-  inset: auto 52px 52px auto;
-  width: 190px;
-  height: 190px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
+  inset: auto 8% 8% auto;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 32px;
   content: "";
+  transform: rotate(9deg);
 }
 
 .brand-mark {
@@ -94,8 +108,10 @@ button {
   width: 38px;
   height: 38px;
   place-items: center;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
 }
 
 .login-copy {
@@ -104,12 +120,65 @@ button {
   max-width: 620px;
 }
 
+.login-eyebrow {
+  display: inline-flex;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
 .login-copy h1 {
   max-width: 600px;
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 5.8rem);
   line-height: 0.94;
-  letter-spacing: 0;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.login-decoration {
+  position: absolute;
+  inset: 22% 10% auto auto;
+  width: 180px;
+  height: 180px;
+  opacity: 0.7;
+}
+
+.login-decoration span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.login-decoration span:nth-child(1) {
+  width: 84px;
+  height: 84px;
+  right: 0;
+  top: 0;
+}
+
+.login-decoration span:nth-child(2) {
+  width: 38px;
+  height: 38px;
+  left: 18px;
+  top: 72px;
+}
+
+.login-decoration span:nth-child(3) {
+  width: 18px;
+  height: 18px;
+  bottom: 5px;
+  right: 46px;
 }
 
 .login-copy p {
@@ -147,24 +216,75 @@ button {
 }
 
 .login-panel {
+  position: relative;
   display: grid;
   min-height: 100vh;
   place-items: center;
-  padding: 32px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(17, 106, 107, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 106, 107, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 85% 12%, rgba(17, 106, 107, 0.09), transparent 28%);
+  background-size: 34px 34px, 34px 34px, auto;
+  padding: clamp(28px, 5vw, 72px);
 }
 
 .login-card {
+  position: relative;
   width: min(100%, 430px);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  box-shadow: var(--shadow);
-  padding: 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 28px 80px rgba(23, 35, 31, 0.16);
+  padding: clamp(26px, 4vw, 38px);
+  backdrop-filter: blur(14px);
+}
+
+.login-card::before {
+  position: absolute;
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  content: "";
+  left: 38px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.login-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.login-card-heading > div > span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.login-card-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--brand), var(--brand-dark));
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(17, 106, 107, 0.24);
 }
 
 .login-card h2 {
-  margin: 0 0 8px;
-  font-size: 1.85rem;
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  letter-spacing: -0.03em;
 }
 
 .login-card p {
@@ -193,7 +313,7 @@ button {
 .field select {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 11px;
   background: #fbfdfc;
   color: var(--ink);
   outline: none;
@@ -216,18 +336,24 @@ button {
   justify-content: center;
   gap: 9px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 11px;
   font-weight: 800;
 }
 
 .primary-button {
-  background: var(--brand);
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
   color: white;
   padding: 0 18px;
+  box-shadow: 0 10px 22px rgba(17, 106, 107, 0.18);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .primary-button:hover {
-  background: var(--brand-dark);
+  box-shadow: 0 13px 28px rgba(17, 106, 107, 0.24);
+  transform: translateY(-1px);
 }
 
 .primary-button:disabled {
@@ -981,7 +1107,11 @@ button {
   }
 
   .login-visual {
-    min-height: 460px;
+    min-height: 420px;
+  }
+
+  .login-panel {
+    min-height: auto;
   }
 
   .sidebar {
@@ -1016,6 +1146,18 @@ button {
   .main-area,
   .sidebar {
     padding: 22px;
+  }
+
+  .login-visual {
+    min-height: 340px;
+  }
+
+  .login-decoration {
+    display: none;
+  }
+
+  .login-copy h1 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
   }
 
   .login-stats,
